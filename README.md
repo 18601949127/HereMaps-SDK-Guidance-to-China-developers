@@ -1,8 +1,10 @@
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221153348342.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
+
 @[TOC](目录)
 
 ## 前言
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221153232320.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
 
 说起导航地图，无论是在手机移动端还是在车机端，国内的车主肯定使用得最多的无疑是高德和百度，高德一直深耕定位和导航功能，百度则在O2O领域布局已久，在百度地图里面可以看到等多的周边商家服务。在车载前装导航领域，国内汽车制造商似乎并不准备将这块蛋糕拱手交给像高德、百度、谷歌这样的第三方服务商，毕竟地图作为基础能力，在智能驾驶、自动驾驶和移动互联网服务等方面都有着极为重要的作用，汽车制造商更希望拥有自主地图服务。这也是为什么宝马、奥迪和戴姆勒组成的财团，会斥巨资收购海外地图数据公司Here的原因。
@@ -33,7 +35,6 @@
 
 
 下面进入主题，先介绍一下 Here地图的SDK：
-
 ## 1.  Here地图Android SDK几个版本对比
 
 Here地图服务对开发者开放下下面几种不同的版本：
@@ -78,12 +79,12 @@ ACESS KEY SECRET：有点像高德地图和百度地图的 Service Key，需要�
 ```
 
 ## 2. 开始集成第一个基础地图
-
 有了Here 地图服务的SDK和 Credentials, 就可以开始集成第一个基础地图了
 
 1. 首先把Here的.aar文件放置到app/libs 文件夹下：
+  
+  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210305153659794.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2021022118445620.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_02,color_FFFFFF,t_70#pic_center)
 
  2. module 的Build.gradle 下记得把 fileTree里面的 .aar文件路径加上，之后记得 Sync一下 Project。 
 
@@ -91,7 +92,7 @@ ACESS KEY SECRET：有点像高德地图和百度地图的 Service Key，需要�
 
 3. 在 Manifest.xml 文件里面添加Here服务的Credentials： 
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2021022118545379.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
+	![在这里插入图片描述](https://img-blog.csdnimg.cn/2021022118545379.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
 上面也提到了，为了方便国内的开发者试用，大家可以直接用我已经申请好的的Credentials。
 
 ```kotlin
@@ -141,22 +142,30 @@ Here地图的 loadMapScene() 方法允许开发者对 MapView界面进行客制�
 7. SATELLITE 
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221204829869.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
+
 这里分别看一下效果：
 
 1.夜空灰色的效果
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221220615905.gif#pic_center)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2021022123302433.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
+下面是截图：
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210305153103520.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
+
+
 
 
 2. 日间灰的效果
-
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221221742196.gif#pic_center)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221231836837.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
+日间灰的效果图： 
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2021030515332668.png#pic_center)
+
 
 3. 第四个按键显示卫星地图的效果
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221222236684.gif#pic_center)
 
 
@@ -175,7 +184,9 @@ Here地图的 loadMapScene() 方法允许开发者对 MapView界面进行客制�
 ```
 
 ## 结语
+
 好了，以上就是Here地图的集成方式。
+
 国内的开发者还要注意Here默认使用 WGS坐标系，需要转换才能适配国内的GCJ坐标系。
 
 

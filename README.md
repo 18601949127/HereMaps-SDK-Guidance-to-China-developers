@@ -20,15 +20,20 @@
 
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221230549723.gif#pic_center)
+
 下面这个是加上卫星地图一起显示的效果：
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221230633620.gif#pic_center)
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221230651827.gif#pic_center)
+
 卫星地图模式很像Google Earth.
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221231115985.jpeg#pic_center)
 
 
 下面进入主题，先介绍一下 Here地图的SDK：
+
 ## 1.  Here地图Android SDK几个版本对比
 
 Here地图服务对开发者开放下下面几种不同的版本：
@@ -73,17 +78,20 @@ ACESS KEY SECRET：有点像高德地图和百度地图的 Service Key，需要�
 ```
 
 ## 2. 开始集成第一个基础地图
+
 有了Here 地图服务的SDK和 Credentials, 就可以开始集成第一个基础地图了
 
 1. 首先把Here的.aar文件放置到app/libs 文件夹下：
-  ![在这里插入图片描述](https://img-blog.csdnimg.cn/2021022118445620.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_02,color_FFFFFF,t_70#pic_center)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2021022118445620.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_02,color_FFFFFF,t_70#pic_center)
 
  2. module 的Build.gradle 下记得把 fileTree里面的 .aar文件路径加上，之后记得 Sync一下 Project。 
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221184853805.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
 
 3. 在 Manifest.xml 文件里面添加Here服务的Credentials： 
-	![在这里插入图片描述](https://img-blog.csdnimg.cn/2021022118545379.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2021022118545379.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
 上面也提到了，为了方便国内的开发者试用，大家可以直接用我已经申请好的的Credentials。
 
 ```kotlin
@@ -131,17 +139,21 @@ Here地图的 loadMapScene() 方法允许开发者对 MapView界面进行客制�
 5. HYBRID_NIGHT
 6. NORMAL_NIGHT 
 7. SATELLITE 
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221204829869.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
 这里分别看一下效果：
 
 1.夜空灰色的效果
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221220615905.gif#pic_center)
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2021022123302433.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
 
 
 2. 日间灰的效果
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221221742196.gif#pic_center)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221231836837.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzczNDk4OA==,size_16,color_FFFFFF,t_70#pic_center)
 
 3. 第四个按键显示卫星地图的效果
